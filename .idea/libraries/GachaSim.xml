@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GachaSim">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../GachaSim/out/artifacts/GachaSim_jar/GachaSim.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
