@@ -18,10 +18,10 @@ public class GachaSimGUI  {
         JTextArea longOutput = new JTextArea();
 
         JButton rollButton = createButton("Roll");
-        rollButton.addActionListener(new RollButtonListener(gachaSimulator,shortOutput));
+        rollButton.addActionListener(new RollButtonListener(gachaSimulator, shortOutput));
 
         JButton getStatsButton = createButton("Show roll statistics");
-        getStatsButton.addActionListener(new GetStatsButtonListener(gachaSimulator,longOutput));
+        getStatsButton.addActionListener(new GetStatsButtonListener(gachaSimulator, longOutput));
 
         rollPanel.add(rollButton);
         rollPanel.add(shortOutput);
@@ -40,7 +40,7 @@ public class GachaSimGUI  {
         return button;
     }
 
-    class RollButtonListener implements ActionListener  {
+    static class RollButtonListener implements ActionListener  {
         GachaSimulator gachaSimulator;
         JTextField output;
 
@@ -58,7 +58,7 @@ public class GachaSimGUI  {
             }
         }
     }
-    class GetStatsButtonListener implements ActionListener  {
+    static class GetStatsButtonListener implements ActionListener  {
         GachaSimulator gachaSimulator;
         JTextArea output;
 
