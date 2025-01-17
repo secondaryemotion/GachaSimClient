@@ -14,7 +14,7 @@ class SaveStatsButtonListener implements ActionListener {
 
     public void actionPerformed(ActionEvent event) {
         try {
-            gachaSimulator.tracker.serialize();
+            RollStatsSerializer.serialize(gachaSimulator.tracker,Main.getRollStatsFilePath());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
