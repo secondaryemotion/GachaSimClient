@@ -10,8 +10,8 @@ public class Main {
         RollGenerator roller = new RollGenerator(new BasicLootRepository(requester), new EpicLootRepository(requester), new LegendaryLootRepository(requester));
         RollStatsTracker tracker = new RollStatsTracker();
         GachaSimulator gacha = new GachaSimulator(roller, tracker);
-        GachaSimGUI gachaSimGUI = new GachaSimGUI();
-        gachaSimGUI.go(gacha);
+        GachaSimGUIBuilder gachaSimGUI = new GachaSimGUIBuilder();
+        gachaSimGUI.createMainFrame(gacha);
 
 
 
