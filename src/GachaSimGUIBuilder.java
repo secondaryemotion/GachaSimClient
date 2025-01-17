@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GachaSimGUIBuilder {
-    public void createMainFrame(GachaSimulator gachaSimulator) {
+    public void createMainFrame(GachaSimulator gachaSimulator)  {
         JFrame mainFrame = new JFrame("Gacha Simulator");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setSize(300,300);
@@ -20,10 +20,15 @@ public class GachaSimGUIBuilder {
         JButton getStatsButton = createCenterAlignedButtonLabeled("Show roll statistics");
         getStatsButton.addActionListener(new GetStatsButtonListener(gachaSimulator, longOutput));
 
+        JButton saveStatsButton = createCenterAlignedButtonLabeled("Save roll statistics");
+        saveStatsButton.addActionListener(new SaveStatsButtonListener(gachaSimulator));
+
+
         rollPanel.add(rollButton);
         rollPanel.add(shortOutput);
         rollPanel.add(getStatsButton);
         rollPanel.add(longOutput);
+        rollPanel.add(saveStatsButton);
 
         mainFrame.getContentPane().add(rollPanel);
         mainFrame.setLocationRelativeTo(null);
@@ -36,6 +41,8 @@ public class GachaSimGUIBuilder {
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         return button;
     }
+
+
 
 
 }

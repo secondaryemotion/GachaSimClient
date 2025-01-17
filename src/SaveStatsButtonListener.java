@@ -4,21 +4,17 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 
-class RollButtonListener implements ActionListener {
+class SaveStatsButtonListener implements ActionListener {
     GachaSimulator gachaSimulator;
-    JTextField output;
 
-    public RollButtonListener(GachaSimulator gachaSimulator, JTextField output) {
+    public SaveStatsButtonListener(GachaSimulator gachaSimulator) {
         this.gachaSimulator = gachaSimulator;
-        this.output = output;
     }
 
 
     public void actionPerformed(ActionEvent event) {
         try {
-            Loot loot = gachaSimulator.pull();
-            String name = loot.getLootName();
-            output.setText(name);
+            gachaSimulator.tracker.serialize();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
