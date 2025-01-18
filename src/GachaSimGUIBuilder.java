@@ -20,15 +20,12 @@ public class GachaSimGUIBuilder {
         JButton getStatsButton = createCenterAlignedButtonLabeled("Show roll statistics");
         getStatsButton.addActionListener(new GetStatsButtonListener(gachaSimulator, longOutput));
 
-        JButton saveStatsButton = createCenterAlignedButtonLabeled("Save roll statistics");
-        saveStatsButton.addActionListener(new SaveStatsButtonListener(gachaSimulator));
 
 
         rollPanel.add(rollButton);
         rollPanel.add(shortOutput);
         rollPanel.add(getStatsButton);
         rollPanel.add(longOutput);
-        rollPanel.add(saveStatsButton);
 
         mainFrame.getContentPane().add(rollPanel);
         mainFrame.setLocationRelativeTo(null);
