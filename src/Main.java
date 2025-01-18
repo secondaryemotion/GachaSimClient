@@ -12,10 +12,10 @@ public class Main {
         URI uri = new URI("http://localhost:8080/random");
         NameGeneratorAPIRequester requester = new NameGeneratorAPIRequester(uri);
         RollGenerator roller = new RollGenerator(new BasicLootRepository(requester), new EpicLootRepository(requester), new LegendaryLootRepository(requester));
-        RollStatsTracker tracker = RollStatsSerializer.deserialize(rollStatsFilePath);
+        RollStats stats = RollStatsSerializer.deserialize(rollStatsFilePath);
 
 
-        GachaSimulator gacha = new GachaSimulator(roller, tracker);
+        GachaSimulator gacha = new GachaSimulator(roller, stats);
         GachaSimGUIBuilder gachaSimGUI = new GachaSimGUIBuilder();
         gachaSimGUI.createMainFrame(gacha);
 

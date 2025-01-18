@@ -19,7 +19,7 @@ class RollButtonListener implements ActionListener {
             Loot loot = gachaSimulator.pull();
             String name = loot.getLootName();
             output.setText(name);
-            RollStatsSerializer.serialize(gachaSimulator.tracker,Main.getRollStatsFilePath());
+            RollStatsSerializer.serialize(gachaSimulator.stats,Main.getRollStatsFilePath());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
