@@ -21,7 +21,9 @@ class RollButtonListener implements ActionListener {
             output.setText(name);
             RollStatsSerializer.serialize(gachaSimulator.stats,Main.getRollStatsFilePath());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            final JPanel panel = new JPanel();
+            JOptionPane.showMessageDialog(panel, "Could not open file", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
         }
     }
 }
